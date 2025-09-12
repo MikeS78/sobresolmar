@@ -1,0 +1,552 @@
+
+
+/* generel styling */
+
+html, body {
+    margin: 0;
+    padding: 0;
+     font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  /* background-color: #eee4cb; */
+    background-color: #f5d58b;
+}
+
+
+
+
+
+a {
+    text-decoration: none;
+   
+}
+
+h2 {
+  font-family: "Averia Serif Libre", serif;
+font-weight: 700;
+color: #292929;
+}
+
+h3 {
+   font-family: "Inter", sans-serif;
+font-weight: 700;
+
+}
+
+
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;       /* fjern luften over */
+  margin-bottom: 1em;  /* behold lidt luft under */
+}
+
+
+
+/* Header topbar */
+
+.svg-wave, .svg-wave2 {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 120%;
+  height: 70px;     
+  background-repeat: repeat-x;
+  background-size: contain;
+  z-index: 0;
+}
+
+
+
+.svg-wave {
+  background-image: url('images/graphics/waves.svg');
+  animation: swayWave 6s ease-in-out infinite alternate;
+}
+
+.svg-wave2 {
+  background-image: url('images/graphics/waves02.svg');
+  animation: swayWave2 6s ease-in-out infinite alternate;
+  bottom: 4px;
+ height: 60px;  
+}
+
+/* Smooth frem-og-tilbage med kun px */
+@keyframes swayWave {
+  0%   { transform: translateX(0px) translateY(3px); }
+  50%  { transform: translateX(-25px) translateY(0px); }
+  100% { transform: translateX(0px) translateY(3px); }
+}
+
+@keyframes swayWave2 {
+  0%   { transform: translateX(-10px) translateY(1px); }
+  50%  { transform: translateX(-20px) translateY(2px); }
+  100% { transform: translateX(-10px) translateY(1px); }
+}
+
+.header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    align-items: stretch; /* <--- gør børnene højden af headeren */
+    background-color: #ffffff;
+    padding: 0; /* vi styrer padding inde i header-left */
+    height: 60px; 
+    z-index: 2;
+      overflow: hidden;  
+       box-shadow: 0 12px 50px rgba(255, 255, 255, 0.3); /* svag skygge under headeren */
+
+}
+
+/* Header left fylder hele højden */
+.header-left {
+    background-color: #D96C4C; /* varm farve */
+    display: flex;
+    flex-direction: column; /* logo over tekst */
+    justify-content: center; /* centrerer indhold lodret */
+    padding: 0 30px; /* luft til siderne */
+    height: 100%; /* fylder hele headeren */
+  background-color: #D96C4C;
+
+}
+
+.header-left .logo {
+    font-weight: bold;
+    color: #292929;
+    font-size: 1.8rem;
+    margin-bottom: -0.2rem;
+    text-decoration: none;
+    font-family: "Averia Serif Libre", serif;
+    font-weight: 700;
+    z-index: 10;
+}
+
+.header-left .header-subtext {
+    font-size: 0.85rem;
+     color: #292929;
+    margin: 0;
+       z-index: 10;
+}
+
+/* Header right nav */
+.header-right
+
+{
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    padding-right: 30px;
+ 
+}
+
+/* Sorte links med luft mellem dem */
+.header-right a,
+.header-right a:visited {
+    color: #292929; /* mørk farve */
+    text-decoration: none;
+    margin-left: 15px; /* afstand mellem links */
+    font-size: 0.9rem;
+    transition: color 0.5s ease;
+    }
+
+.header-right a:hover {
+
+color: #D96C4C; /* mørk farve */
+
+}
+
+
+.header-right a:first-child {
+    margin-left: 0;
+}
+
+
+.logo-sun {
+  position: fixed;       /* altid i hjørnet */
+  top: -50px;
+  left: 26px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, #F5D58B 0%, rgb(247, 199, 86, 0.8) 70%);
+  border-radius: 50%;    /* cirkel */
+  box-shadow: 0 0 20px rgba(255, 200, 0, 0.6);
+  cursor: pointer;       /* valgfrit, hvis den skal kunne klikkes */
+  z-index: 3;
+}
+
+
+
+/* Hero container */
+.hero {
+  position: relative;
+  width: 100%;
+   height: max(66vh, 360px);
+ 
+  overflow: hidden;
+}
+
+/* Slides */
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* top: 50px; */
+}
+
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Billeder */
+.slide img {
+  width: 100%;
+  min-height: 100%;
+  
+  object-fit: cover;
+  
+}
+
+/* Overlay tekst */
+.overlay-text {
+  position: absolute;
+  /* top: clamp(0px, 65%, 500px); */
+  bottom: 60px;
+  left: 60px;
+  /* transform: translate(-50%, -50%); */
+  color: #fff;
+  text-align: left;
+  /* text-shadow: 0 2px 10px rgba(0,0,0,0.6); */
+
+}
+
+.text-box {
+  background: rgba(74, 144, 195, 0.8); /* halvtransparent baggrund */
+  padding: 5px 12px;
+  margin: 5px 0;   /* afstand mellem bokse */
+  border-radius: 8px;
+  display: inline-block; /* så boxen kun er omkring teksten */
+
+}
+
+/* H1 / P styling */
+.text-box h1 {
+  margin: 0;
+  font-size: 2.9rem;
+  color: #F5D58B;
+   font-family: "Averia Serif Libre", serif;
+}
+
+.text-box p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Navigation */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  padding: 10px 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev { left: 0px; }
+.next { right: 0px; }
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Responsive tekst */
+@media (max-width: 768px) {
+  .overlay-text h1 { font-size: 1.8rem; }
+  .overlay-text p { font-size: 1rem; }
+}
+
+
+.spacer {
+
+width: 100%;
+height: 30px;
+background-color: #d96c4c;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 52 52'%3E%3Cpath fill='%23e09e8b' fill-opacity='0.4' d='M0 17.83V0h17.83a3 3 0 0 1-5.66 2H5.9A5 5 0 0 1 2 5.9v6.27a3 3 0 0 1-2 5.66zm0 18.34a3 3 0 0 1 2 5.66v6.27A5 5 0 0 1 5.9 52h6.27a3 3 0 0 1 5.66 0H0V36.17zM36.17 52a3 3 0 0 1 5.66 0h6.27a5 5 0 0 1 3.9-3.9v-6.27a3 3 0 0 1 0-5.66V52H36.17zM0 31.93v-9.78a5 5 0 0 1 3.8.72l4.43-4.43a3 3 0 1 1 1.42 1.41L5.2 24.28a5 5 0 0 1 0 5.52l4.44 4.43a3 3 0 1 1-1.42 1.42L3.8 31.2a5 5 0 0 1-3.8.72zm52-14.1a3 3 0 0 1 0-5.66V5.9A5 5 0 0 1 48.1 2h-6.27a3 3 0 0 1-5.66-2H52v17.83zm0 14.1a4.97 4.97 0 0 1-1.72-.72l-4.43 4.44a3 3 0 1 1-1.41-1.42l4.43-4.43a5 5 0 0 1 0-5.52l-4.43-4.43a3 3 0 1 1 1.41-1.41l4.43 4.43c.53-.35 1.12-.6 1.72-.72v9.78zM22.15 0h9.78a5 5 0 0 1-.72 3.8l4.44 4.43a3 3 0 1 1-1.42 1.42L29.8 5.2a5 5 0 0 1-5.52 0l-4.43 4.44a3 3 0 1 1-1.41-1.42l4.43-4.43a5 5 0 0 1-.72-3.8zm0 52c.13-.6.37-1.19.72-1.72l-4.43-4.43a3 3 0 1 1 1.41-1.41l4.43 4.43a5 5 0 0 1 5.52 0l4.43-4.43a3 3 0 1 1 1.42 1.41l-4.44 4.43c.36.53.6 1.12.72 1.72h-9.78zm9.75-24a5 5 0 0 1-3.9 3.9v6.27a3 3 0 1 1-2 0V31.9a5 5 0 0 1-3.9-3.9h-6.27a3 3 0 1 1 0-2h6.27a5 5 0 0 1 3.9-3.9v-6.27a3 3 0 1 1 2 0v6.27a5 5 0 0 1 3.9 3.9h6.27a3 3 0 1 1 0 2H31.9z'%3E%3C/path%3E%3C/svg%3E");
+
+}
+
+
+
+.bluespacer {
+position: fixed;
+    top: 60px;           
+    left: 0;
+    width: 100%;
+    height: 4px;
+width: 100%;
+background-color: #4a90c3ff;
+z-index: 1;
+}
+
+.section {
+  padding: 40px 60px;
+}
+
+.section.alt-bg {
+  background: #4a90c3ff; /* giver lidt variation mellem sektioner */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  /* margin-bottom: 40px; */
+}
+
+.section-title.alt {
+
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 45px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0px;
+  
+}
+
+.map {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+}
+
+
+
+.scheme-container {
+display: inline-block;
+padding: 18px;
+border: 2px solid #D96C4C;
+ border-radius: 8px;
+
+
+}
+
+.scheme {
+  list-style: none;
+  padding: 0;
+  
+}
+
+ul.scheme > li {
+  font-size: 0.9rem;
+  line-height: 1.6rem;
+  font-weight: 600;
+}
+
+
+.scheme li::before {
+  content: url('images/graphics/olive-9.svg'); /* kan også være tekst eller unicode */
+  display: inline-block;
+  width: 16px; 
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+  }
+
+
+
+
+.col-8 {
+  grid-column: span 8;
+  
+}
+
+.col-6 {
+  grid-column: span 6;
+  }
+.col-5 {
+  grid-column: span 5;
+  }
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.col-12 {
+  grid-column: span 12;
+}
+
+ul.alt > li {
+font-weight: 500;
+color: white;
+}
+
+p.alt {
+  color: white;
+}
+
+h3.alt {
+  color: white
+}
+
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #292929;
+}
+
+.section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+   margin-top: 0; 
+  color: #292929;
+  padding: 0;
+
+
+}
+
+.section .alt {
+color: white;
+}
+
+.section p, .section li {
+  font-size: 0.9rem;
+  
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+
+/* thumbs indretning */
+
+.overview {
+  text-align: center;
+  padding: 0px 20px;
+}
+
+.overview h2 {
+  margin-bottom: 30px;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.overview-item img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%; 
+  /* border: 3px solid #eee5d4; */
+  transition: transform 0.3s ease;
+}
+
+.overview-item img:hover {
+  transform: scale(1.05);
+}
+
+.overview-item p {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #333;
+
+}
+
+
+
+
+.pixtext {
+  font-weight: 600;
+ 
+}
+
+
+
+/* Booking form */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+form label {
+  margin-top: 15px;
+}
+
+form input {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background: #4a90c3;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #35709c;
+}
+
+
+
+
+
+footer {
+    background-color: white;
+    color: rgb(68, 68, 68);
+    
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+}
+

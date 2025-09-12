@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sobresolmar</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+
+<!-- Google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+<!-- gsap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+
+</head>
+<body>
+    
+
+
+
+
+<header class="header bar">
+    <div class="header-left">
+        <a href="#" class="logo">sobresolmar</a>
+        <p class="header-subtext">Under solen over havet</p>
+        <div class="logo-sun"></div>
+    </div>
+
+    <div class="header-right">
+        <nav class="nav">
+            <!-- <a href="#forside" class="nav-link">Forside</a> -->
+            <a href="#lejligheden" class="nav-link">Lejligheden</a>
+            <a href="#praktisk" class="nav-link">Området</a>
+            <a href="#galleri" class="nav-link">Galleri</a>
+             <a href="#inspiration" class="nav-link">Inspiration</a>
+            <a href="#booking" class="nav-link">Booking</a>
+        </nav>
+    </div>
+
+      <!-- SVG animation under header -->
+        <div class="svg-wave2"></div>
+  <div class="svg-wave"></div>
+ 
+</header>
+ <div class="bluespacer"></div>
+<script >
+  gsap.to(".logo-sun", {
+    scale: 1.05,            // puls op
+    repeat: -1,             // gentag uendeligt
+    yoyo: true,             // tilbage til original størrelse
+    duration: 1,            // 1 sekund per puls
+    ease: "power1.inOut"
+  });
+</script>
+ 
+
+<section class="hero">
+  <div class="slides">
+    <!-- Slides genereres herfra JSON via JS -->
+  </div>
+
+  <!-- Navigation -->s
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</section>
+
+
+<section class="spacer">
+</section>
+
+
+<main>
+  <!-- Lejligheden -->
+  <section id="lejligheden" class="section">
+
+     <h2 class="section-title">Lejligheden</h2>
+   
+
+    <div class="container">
+
+        
+         <div class="col-8">
+     
+      <p>
+        Her kan du skrive en kort introduktion til lejligheden. Beskriv stemningen,
+        beliggenheden og hvad der gør den særlig.  simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centurie
+      </p>
+      <p>
+        Tilføj evt. et par billeder eller en lille liste over faciliteter for at gøre
+        det mere overskueligt.
+      </p>
+    
+    
+          <p>
+        Indsæt evt. en plantegning, skal bare være håndtegnet og simpel. <br><br>
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source
+      </p>
+    
+    
+    </div>
+
+        <div class="col-4">
+     
+
+<div class="scheme-container">
+
+      <h3>
+        Hurtige facts
+      </h3>
+     
+        <ul class="scheme">      
+<li>1 km. til Middelhavet </li>
+ <li>Gratis og nem parkering</li>
+<li>2 min adgang til pool-område</li>
+<li>50m2 terrasse med udsigt</li>
+<li>Gratis adgang til paddletennis</li>
+<li>2 badeværelser (badekar)</li>
+<li>1 time fra Malaga lufthavn</li>
+<li>Veludstyret køkken</li>
+</ul>
+
+       
+    
+    </div>
+
+</div>
+
+        <div class="col-12">
+      <!-- <h3>Indretning</h3> -->
+
+
+          <section class="overview">
+
+  <div class="overview-grid">
+    <div class="overview-item">
+      <img src="images/thumbs/terrasse_thumb.jpg" alt="Terrasse">
+      <p class="pixtext">Terrasse</p>
+    </div>
+    <div class="overview-item">
+      <img src="images/thumbs/sove_thumb.jpg" alt="Værelser">
+      <p class="pixtext">Værelser</p>
+    </div>
+    <div class="overview-item">
+      <img src="images/thumbs/koekken_thumb.jpg" alt="Køkken og bad">
+      <p class="pixtext">Køkken &amp; Bad</p>
+    </div>
+    <div class="overview-item">
+      <img src="images/thumbs/pool_thumb.jpg" alt="Området">
+      <p class="pixtext">Rundt om</p>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="spacer">
+</section>
+
+  <!-- Praktisk info -->
+  <section id="praktisk" class="section alt-bg">
+           <h2 class="section-title alt">Området</h2>
+    <div class="container">
+  
+
+        
+         <div class="col-6">
+
+  <img class="map" src="images/map.jpg" alt="Området">
+
+    </div>
+
+
+
+         <div class="col-6">
+ <h3 class="alt">Historie</h3>
+<p class="p alt">
+ 
+  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to gene
+
+</p>
+
+
+      <ul class="ul alt">
+        <li>es, and more recently with d</li>
+        <li>s from sections 1.10.32 and 1.10.33 of</li>
+        <li>anything embarrassing hidden in the middle of text. All the Lorem Ipsum gene</li>
+        <li>tor on the Internet. It uses a dictionary of over 200 Latin words, combined wierate Lorem</li>
+      </ul>
+ 
+    </div>
+
+
+
+
+
+
+  </section>
+  <section class="spacer">
+</section>
+
+  <!-- Galleri -->
+  <section id="galleri" class="section">
+    <div class="container">
+      <h2>Galleri</h2>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/300x200" alt="Galleri billede 1">
+        <img src="https://via.placeholder.com/300x200" alt="Galleri billede 2">
+        <img src="https://via.placeholder.com/300x200" alt="Galleri billede 3">
+        <img src="https://via.placeholder.com/300x200" alt="Galleri billede 4">
+      </div>
+    </div>
+  </section>
+  <section class="spacer">
+</section>
+
+  <!-- Booking -->
+  <section id="booking" class="section alt-bg">
+    <div class="container">
+      <h2>Booking</h2>
+      <p>
+        Klar til at booke dit ophold? Udfyld formularen eller kontakt os direkte for at
+        høre mere.
+      </p>
+      <form>
+        <label for="name">Navn:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="dates">Ønskede datoer:</label>
+        <input type="text" id="dates" name="dates">
+
+        <button type="submit">Send bookingforespørgsel</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+
+
+<footer>
+
+    <div class="footer-content">
+        <p>Email: info@sobresolmar.dk. Tlf. 34454534</p>
+</div>
+
+</footer>
+
+
+
+
+
+</body>
+
+</html>
