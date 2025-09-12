@@ -64,7 +64,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .svg-wave2 {
   background-image: url('images/graphics/waves02.svg');
   animation: swayWave2 6s ease-in-out infinite alternate;
-  bottom: 4px;
+  bottom: 1px;
  height: 60px;  
 }
 
